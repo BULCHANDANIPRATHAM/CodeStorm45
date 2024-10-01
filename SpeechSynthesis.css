@@ -1,0 +1,72 @@
+.speech-recognition-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f4f8; /* Light background color for the container */
+}
+.theme-text-area {
+  width: 80%; /* Increased width of the text area */
+  /* Set a maximum width to prevent it from becoming too wide */
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical; /* Allows vertical resizing */
+}
+
+.speech-recognition-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Ensures the button is perfectly circular */
+  background-color: #4a90e2; /* Button background color (blue) */
+  border: none; /* Removes any border */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  transition: all 0.3s ease;
+  padding: 0; /* Ensures there's no padding inside the button */
+  margin: 0; /* Ensures there's no margin around the button */
+  outline: none; /* Removes default outline when button is clicked */
+}
+
+.speech-recognition-button:hover {
+  background-color: #357abd; /* Button background color changes on hover */
+  transform: scale(1.05); /* Button grows slightly on hover */
+}
+
+.speech-recognition-button:active {
+  transform: scale(0.95); /* Button shrinks slightly on click */
+}
+
+.speech-recognition-button.listening {
+  background-color: #e74c3c; /* Changes background to red when listening */
+  animation: pulse 1.5s infinite; /* Adds pulsing animation when listening */
+}
+
+.speech-recognition-button svg {
+  color: white; /* Icon color inside the button */
+}
+
+.speech-recognition-status {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333; /* Status message color */
+}
+
+/* Pulse animation for the button when listening */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); /* Red pulse shadow */
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); /* Pulse grows and fades */
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); /* Pulse disappears */
+  }
+}
